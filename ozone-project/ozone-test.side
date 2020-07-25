@@ -1,0 +1,1797 @@
+{
+  "id": "80052255-c1d2-44fc-8082-8b3d4ebe9fb2",
+  "version": "2.0",
+  "name": "ozone-test",
+  "url": "https://www.ozone.bg/homepage.php/",
+  "tests": [{
+    "id": "f3f09fbb-1085-4a25-abfa-f520f7a3fdaf",
+    "name": "1_login-test",
+    "commands": [{
+      "id": "45b7d378-3f00-4c5a-8a87-3fcd0f793fad",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "296f593d-e6a2-4e7a-a708-a97545baeef3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e11dd563-31ef-4b16-b3d1-21d8285a79cb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/a",
+      "targets": [
+        ["css=.opened", "css:finder"],
+        ["xpath=//a[contains(@href, 'https://www.ozone.bg/customer/account/')]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87d6e7d4-dc47-4fc8-bc98-4f75a8608be6",
+      "comment": "",
+      "command": "store",
+      "target": "daniel619",
+      "targets": [],
+      "value": "login_password"
+    }, {
+      "id": "a59500cd-e9b0-425e-8a3d-3a821592a0ac",
+      "comment": "",
+      "command": "store",
+      "target": "danielddimitrov@abv.bg",
+      "targets": [],
+      "value": "login_username"
+    }, {
+      "id": "401006c7-38ac-4b99-910c-6917bc7f6e5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=login[username]", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${login_username}"
+    }, {
+      "id": "a76b253d-76f0-40fc-a416-794ad30eb760",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "targets": [
+        ["id=pass", "id"],
+        ["name=login[password]", "name"],
+        ["css=#pass", "css:finder"],
+        ["xpath=//input[@id='pass']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "${login_password}"
+    }, {
+      "id": "5a91a6d7-b0c4-42c7-b1d1-f14bec3cfe18",
+      "comment": "",
+      "command": "click",
+      "target": "id=send2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a985e37-56b0-4e11-ac5a-3a06e7236885",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Вашият профил | Ozone.bg",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "26092d2c-d6dc-48e5-8c35-d8bbf51d3438",
+    "name": "3_search-bar-category",
+    "commands": [{
+      "id": "272241ef-9142-42ee-99a0-422d12d0118f",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1975cce-8276-4872-bc85-a8136466958e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68de093e-6074-4e8e-8b0c-2b457bd67684",
+      "comment": "",
+      "command": "store",
+      "target": "star wars",
+      "targets": [],
+      "value": "search_input"
+    }, {
+      "id": "59dc4451-fc4a-42de-a2a3-1fadf2b2bb0a",
+      "comment": "",
+      "command": "type",
+      "target": "id=search",
+      "targets": [
+        ["id=search", "id"],
+        ["name=q", "name"],
+        ["css=#search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//form[@id='search_mini_form']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${search_input}"
+    }, {
+      "id": "d9d7641d-885e-42d8-89d4-00295dfdadc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#search_mini_form > .search-submit",
+      "targets": [
+        ["css=#search_mini_form > .search-submit", "css:finder"],
+        ["xpath=//form[@id='search_mini_form']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d75a534-3ccb-4b71-ac27-2109e4ddb5ad",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${search_input}.toUpperCase()",
+      "targets": [],
+      "value": "search_input"
+    }, {
+      "id": "55404cf5-e451-48ed-998a-866f11d9a8d3",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=isp_results_search_text",
+      "targets": [],
+      "value": "${search_input}"
+    }]
+  }, {
+    "id": "1c6af4f9-b1d8-4042-8a28-9327f3d6b105",
+    "name": "2_seach-category",
+    "commands": [{
+      "id": "742dcae9-27a1-4945-81b2-dd9b3f223964",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/gaming/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec4f2101-2863-4157-b5a7-81886ff32f41",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56e36a69-d311-46c5-8bdc-4b6d68dcacf1",
+      "comment": "",
+      "command": "store",
+      "target": "PS4",
+      "targets": [],
+      "value": "platform_category"
+    }, {
+      "id": "a4174506-9631-46fd-ba2b-b26b29fedd5f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Игри за компютри и конзоли')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc14014c-1202-435e-a434-f727c65c9e1d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Игри за PS4')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "837f1eb5-8f49-4b0e-bebe-842df356db72",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span/img",
+      "targets": [
+        ["css=#productSlider_cplsd2e2ac2b5077d602c6a56612960a0b36e .owl-item:nth-child(1) .first", "css:finder"],
+        ["xpath=//img[@alt='Garfield Kart: Furious Racing (PS4)']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsd2e2ac2b5077d602c6a56612960a0b36e']/div/div/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c85e868e-4f56-42b8-bb37-ae2b606227cc",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div[6]/div/div/div[3]/div/div[2]/div/div[2]/table/tbody/tr[3]/td",
+      "targets": [
+        ["css=.col-xs-6:nth-child(2) tr:nth-child(3) > td", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[6]/div/div/div[3]/div/div[2]/div/div[2]/table/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//div[2]/table/tbody/tr[3]/td", "xpath:position"]
+      ],
+      "value": "${platform_category}"
+    }]
+  }, {
+    "id": "ec89d803-4cc3-4837-af31-c137a0665e8b",
+    "name": "4_book-search-title",
+    "commands": [{
+      "id": "3bbbca87-d53c-4ffd-8c9f-28d91f10d827",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb634eee-501d-4893-82f7-4b38037279c5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3327e85-0ba6-432a-ae3c-38647ee4f039",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li[2]/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(2) h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li[2]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Книжарница')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "758737a5-ec2f-4a81-b6a4-1c18a7582bdb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Книги')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f109891-6c7c-427c-8612-5ef9501d3952",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(3) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[3]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Романтични')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c885f03-55e6-41d1-a398-7ef754df0cf1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='products-list']/div[3]/a/span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(3) .first", "css:finder"],
+        ["xpath=//img[@alt='Шпионката (Даниел Стийл) -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[3]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16c80e51-5197-4338-a682-7ba04ec47c5a",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=h1",
+      "targets": [],
+      "value": "book_title"
+    }, {
+      "id": "6f7ded53-6130-4507-8ea5-f8e8c053a82d",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.current > span",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "b15f11b2-d789-423f-b033-7f8a50dedf27",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${book_title}.toLowerCase()",
+      "targets": [],
+      "value": "book_title"
+    }, {
+      "id": "68c59256-7e72-422b-8e74-c4f579fa815c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${title}.toLowerCase()",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "8bee7d58-1be7-4e6e-ac42-91b5573b3471",
+      "comment": "",
+      "command": "if",
+      "target": "${book_title} === ${title}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b20278a-29ac-4a68-ab65-76352736f6c5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"correct\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "f6f530b2-44ec-4320-8d0c-9e8d02d9ba1d",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "596db7d2-7da7-47ef-9695-e9c7fe528a94",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"false\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "cacb1d56-f40a-4fa2-8651-b7596e2a6dae",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c22cd5d-0ddb-4d09-b5df-6b2176c27bbc",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "correct"
+    }]
+  }, {
+    "id": "167a7c42-2bce-468b-94bd-a6a4287831df",
+    "name": "5_path-to-page-filter",
+    "commands": [{
+      "id": "5c7ecf62-4e74-464c-acf9-b176a0c53f63",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fbc76b4-4ef8-4a65-83e7-9fc9debe7b49",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "253916ba-21eb-4ebe-a1aa-3da95c7442b1",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=.active h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": "gaming_category"
+    }, {
+      "id": "092f6aba-c8f6-46c9-8d3f-0a329c48c22c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=.active h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b2bd401-b2ad-4689-a8a1-806d5a0eefbd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.current > span",
+      "targets": [
+        ["css=.current > span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/span/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span/span", "xpath:position"]
+      ],
+      "value": "${gaming_category}"
+    }, {
+      "id": "9f2428dc-7d9f-4934-8aa6-9c85cb517a36",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(3) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[3]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг компютри')]", "xpath:innerText"]
+      ],
+      "value": "gaming_pc_category"
+    }, {
+      "id": "43f9b367-bf8b-4722-8ac3-518ca722a47c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(3) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[3]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[3]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг компютри')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cd7f4b6-64fe-43e0-a5b3-a65a07e24606",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[3]/span/span",
+      "targets": [
+        ["css=.current > span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[3]/span/span", "xpath:idRelative"],
+        ["xpath=//li[3]/span/span", "xpath:position"]
+      ],
+      "value": "${gaming_pc_category}"
+    }, {
+      "id": "113d10a1-bf76-4f13-80d2-fd3cfc6fda8b",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[2]/a/span/h3",
+      "targets": [
+        ["css=.last h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[2]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[2]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Геймърски лаптопи')]", "xpath:innerText"]
+      ],
+      "value": "gaming_laptop_category"
+    }, {
+      "id": "bf650af0-2917-4790-ba1f-ba9af6b65fa2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[2]/a/span/h3",
+      "targets": [
+        ["css=.last h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li[2]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li[2]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Геймърски лаптопи')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ef66671-cb7e-4376-9b2f-f193624012b4",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[4]/span/span",
+      "targets": [
+        ["css=.current > span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[4]/span/span", "xpath:idRelative"],
+        ["xpath=//li[4]/span/span", "xpath:position"]
+      ],
+      "value": "${gaming_laptop_category}"
+    }, {
+      "id": "20ba9de3-6a98-47f1-911b-9305ef9aecbc",
+      "comment": "",
+      "command": "click",
+      "target": "id=filter-link-marka-alienware",
+      "targets": [
+        ["id=filter-link-marka-alienware", "id"],
+        ["css=#filter-link-marka-alienware", "css:finder"],
+        ["xpath=//span[@id='filter-link-marka-alienware']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/ul/li/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4a9be8e-4928-4909-b435-bfe4c35f9c4e",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//a[contains(text(),'Alienware')]",
+      "targets": [
+        ["linkText=Alienware", "linkText"],
+        ["css=.filter", "css:finder"],
+        ["xpath=//a[contains(text(),'Alienware')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/gaming/geyming-kompyutri/geymarski-laptopi/')])[3]", "xpath:href"],
+        ["xpath=//aside/div/div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "alienware_category"
+    }, {
+      "id": "be7055e1-952e-4c59-9955-ee2593c30934",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(2) .first", "css:finder"],
+        ["xpath=//img[@alt='Гейминг лаптоп Dell Alienware m15 R2 -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[2]/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "daa13432-15f8-4b51-9354-0cf33d52e7fa",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Alienware",
+      "targets": [
+        ["linkText=Alienware", "linkText"],
+        ["css=span:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Alienware')]", "xpath:link"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/div[5]/ul/li[5]/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ozone.bg/brand-alienware/')]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Alienware')]", "xpath:innerText"]
+      ],
+      "value": "${alienware_category}"
+    }]
+  }, {
+    "id": "99a5c674-7b7c-4fc4-b43b-0a72f0303e90",
+    "name": "6_active_filters_figures",
+    "commands": [{
+      "id": "0a60bb2b-fec5-4590-9ca0-dd80f1cdaa38",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "925c0fae-a8d7-4f84-a2bc-017b5efb2da7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f212a66e-ad81-41db-afa8-5cf73c1d505c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li[4]/a/span/h3",
+      "targets": [
+        ["css=.active:nth-child(4) h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li[4]/a/span/h3", "xpath:idRelative"],
+        ["xpath=//li[4]/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Мърчандайз')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "816b2e1e-b4a0-4cd2-b4d1-83a1b7c81298",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Фигури')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8f6f650-efc1-4540-b1b3-c84caccd09ac",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/ul/li/label/span",
+      "targets": [
+        ["id=filter-link-marka-funko", "id"],
+        ["css=#filter-link-marka-funko", "css:finder"],
+        ["xpath=//span[@id='filter-link-marka-funko']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/ul/li/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": "merch_mark"
+    }, {
+      "id": "e16ac1cb-d95d-46d8-a01c-43a0485d389e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${merch_mark}.replace(/ \\(\\d+\\)$/,\"\")",
+      "targets": [],
+      "value": "merch_mark"
+    }, {
+      "id": "bf57ba1d-ec6e-43e3-8b14-9ca2b6f9cedb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/ul/li/label/span",
+      "targets": [
+        ["id=filter-link-marka-funko", "id"],
+        ["css=#filter-link-marka-funko", "css:finder"],
+        ["xpath=//span[@id='filter-link-marka-funko']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/ul/li/label/span", "xpath:idRelative"],
+        ["xpath=//label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad85818b-17cf-4038-a9a7-ee1afa9e0821",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div/a",
+      "targets": [
+        ["css=.filter", "css:finder"],
+        ["xpath=(//a[contains(text(),'Funko')])[2]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/drehi-merchandise/figures/')])[20]", "xpath:href"],
+        ["xpath=//aside/div/div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "${merch_mark}"
+    }, {
+      "id": "2acaa1f7-c1c9-4701-baba-5f6b06cc19c1",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[3]/ul/li[9]/label/span",
+      "targets": [
+        ["id=filter-link-vid_produkt-figuri-pop", "id"],
+        ["css=#filter-link-vid_produkt-figuri-pop", "css:finder"],
+        ["xpath=//span[@id='filter-link-vid_produkt-figuri-pop']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[3]/ul/li[9]/label/span", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li[9]/label/span", "xpath:position"]
+      ],
+      "value": "type_product"
+    }, {
+      "id": "0e5acb91-c7d2-40f2-9e90-94590a00b081",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${type_product}.replace(/ \\(\\d+\\)$/,\"\")",
+      "targets": [],
+      "value": "type_product"
+    }, {
+      "id": "f9fba714-7ee6-4ec6-8a1f-5c548b8f94ad",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[3]/ul/li[9]/label/span",
+      "targets": [
+        ["id=filter-link-vid_produkt-figuri-pop", "id"],
+        ["css=#filter-link-vid_produkt-figuri-pop", "css:finder"],
+        ["xpath=//span[@id='filter-link-vid_produkt-figuri-pop']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[3]/ul/li[9]/label/span", "xpath:idRelative"],
+        ["xpath=//div[3]/ul/li[9]/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c61f64a9-44d6-420d-8de0-c05039faa2ce",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div[2]/a",
+      "targets": [
+        ["linkText=Фигури Pop!", "linkText"],
+        ["css=.state-filter:nth-child(3) > .filter", "css:finder"],
+        ["xpath=//a[contains(text(),'Фигури Pop!')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/drehi-merchandise/figures/?marka=funko')])[11]", "xpath:href"],
+        ["xpath=//aside/div/div[3]/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Фигури Pop!')]", "xpath:innerText"]
+      ],
+      "value": "${type_product}"
+    }, {
+      "id": "9cc8e9d9-bbea-4617-9820-234614b50832",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//span[@id='filter-link-tema-batman-batman']",
+      "targets": [
+        ["id=filter-link-tema-batman-batman", "id"],
+        ["css=#filter-link-tema-batman-batman", "css:finder"],
+        ["xpath=//span[@id='filter-link-tema-batman-batman']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[4]/ul/li[7]/label/span", "xpath:idRelative"],
+        ["xpath=//div[4]/ul/li[7]/label/span", "xpath:position"]
+      ],
+      "value": "theme"
+    }, {
+      "id": "93473ff5-19f8-4a69-88d0-c04ada64ebe8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${theme}.replace(/ \\(\\d+\\)$/,\"\")",
+      "targets": [],
+      "value": "theme"
+    }, {
+      "id": "13742895-eda2-49bf-bb14-8b7001150b6b",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[@id='filter-link-tema-batman-batman']",
+      "targets": [
+        ["id=filter-link-tema-batman-batman", "id"],
+        ["css=#filter-link-tema-batman-batman", "css:finder"],
+        ["xpath=//span[@id='filter-link-tema-batman-batman']", "xpath:attributes"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div[4]/ul/li[7]/label/span", "xpath:idRelative"],
+        ["xpath=//div[4]/ul/li[7]/label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1f4cbff-44a0-499f-b25c-b9a0f17b31c7",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div[3]/a",
+      "targets": [
+        ["linkText=Attack On Titan", "linkText"],
+        ["css=.state-filter:nth-child(4) > .filter", "css:finder"],
+        ["xpath=//a[contains(text(),'Attack On Titan')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[3]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ozone.bg/drehi-merchandise/figures/?marka=funko&vid_produkt=figuri-pop')]", "xpath:href"],
+        ["xpath=//aside/div/div[3]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": "${theme}"
+    }, {
+      "id": "776fcf4e-1517-4cb5-9261-9d13ea738852",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span/img",
+      "targets": [
+        ["css=.first", "css:finder"],
+        ["xpath=//img[@alt='Фигура Funko Pop! Animation: Attack on Titan - Erwin (One-Armed), #462 -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[2]/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61da4004-30a4-437e-8140-0d00418c84b1",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//tr[2]/td/a",
+      "targets": [
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Funko')])[4]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[6]/div/div/div[3]/div/div[2]/div/div/table/tbody/tr[2]/td/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/brand-funko/')])[3]", "xpath:href"],
+        ["xpath=//tr[2]/td/a", "xpath:position"]
+      ],
+      "value": "${merch_mark}"
+    }, {
+      "id": "f611ee8a-d876-406f-8d0d-4ac88716358f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//tr[4]/td/a",
+      "targets": [
+        ["linkText=Фигури Pop!", "linkText"],
+        ["css=.col-xs-6:nth-child(1) tr:nth-child(4) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Фигури Pop!')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[6]/div/div/div[3]/div/div[2]/div/div/table/tbody/tr[4]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.ozone.bg/kind-figuri-pop/')]", "xpath:href"],
+        ["xpath=//tr[4]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Фигури Pop!')]", "xpath:innerText"]
+      ],
+      "value": "${type_product}"
+    }, {
+      "id": "4d8166f9-421e-42be-8bc6-19bc8883939d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//tr[3]/td/a",
+      "targets": [
+        ["css=tr:nth-child(3) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Attack On Titan')])[2]", "xpath:link"],
+        ["xpath=//div[@id='main']/div/div[6]/div/div/div[3]/div/div[2]/div/div/table/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/theme-attack-on-titan/')])[2]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"]
+      ],
+      "value": "${theme}"
+    }]
+  }, {
+    "id": "44bc6016-5ed4-4639-8f07-5e7fe9746c8b",
+    "name": "7_add-to-cart",
+    "commands": [{
+      "id": "dd716046-c6b1-48e6-931c-f1fa055f5054",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f044f5a7-64ce-47d1-8545-84a02c193c47",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5403535-d737-4ad4-aa82-2746fae3472e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00bb687f-94ed-4d08-ad97-c4da83819141",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/a/span/img",
+      "targets": [
+        ["css=.owl-item:nth-child(3) .first", "css:finder"],
+        ["xpath=//img[@alt='Xbox One S + Star Wars Jedi: Fallen Order Bundle']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div[3]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c852de8-1510-489b-9515-40e76ad8ebac",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=.col-xs-5 > h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Xbox One S + Star Wars Jedi: Fallen Order Bundle')]", "xpath:innerText"]
+      ],
+      "value": "first_item"
+    }, {
+      "id": "a1082a1f-e44b-44f8-adb8-2fa7a0ade21f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "865e97fb-2e00-45b2-8355-be38a3d7e55a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.close-popup",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[16]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "564b9346-152b-40d3-ad34-f8cc630cb025",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8397a2c5-bb43-49e7-afbc-3d3e352abd95",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[3]/div/div[2]/a/span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(2) .first", "css:finder"],
+        ["xpath=//img[@alt='Гейминг мишка Razer Abyssus Essential -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[2]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fef0dcb-38ed-4947-a935-2c2a4f43912d",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Гейминг мишка Razer Abyssus Essential')]", "xpath:innerText"]
+      ],
+      "value": "second_item "
+    }, {
+      "id": "f3fe05ff-7890-4db2-941c-68ce4d6dc4c6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b7c169c-703c-4dfe-bbaa-0fd5f898b247",
+      "comment": "",
+      "command": "click",
+      "target": "css=.close-popup",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[13]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "045d9ba1-c47d-47b5-9bf8-8ad1d1e71050",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83680b07-360a-4e93-b1fb-8da6c773146c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span/img",
+      "targets": [
+        ["css=.owl-item:nth-child(1) .first", "css:finder"],
+        ["xpath=//img[@alt='Механична клавиатура Redragon - Mitra K551, черна']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7be56470-72aa-4a25-a2fd-aa839eaf7222",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Механична клавиатура Redragon - Mitra K551, черна')]", "xpath:innerText"]
+      ],
+      "value": "third_item"
+    }, {
+      "id": "577c6815-a3d3-4565-b2d0-8a9dc0e0851f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c58ddbd6-50f5-4a37-8ebb-754273816060",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a",
+      "targets": [
+        ["css=.checkout-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Виж кошницата')])[2]", "xpath:link"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/checkout/cart/?___SID=U')])[3]", "xpath:href"],
+        ["xpath=//div[7]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d49e03f1-0586-4431-9209-c13907a323b7",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a",
+      "targets": [
+        ["linkText=Xbox One S + Star Wars Jedi: Fallen Order Bundle", "linkText"],
+        ["css=.cart-row:nth-child(2) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xbox One S + Star Wars Jedi: Fallen Order Bundle')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/xbox-one-s-star-wars-jedi-fallen-order-bundle/')])[4]", "xpath:href"],
+        ["xpath=//form/div/div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": "${first_item}"
+    }, {
+      "id": "67fa6698-33b8-4276-be47-6a9baf27c50c",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a",
+      "targets": [
+        ["linkText=Гейминг мишка Razer Abyssus Essential", "linkText"],
+        ["css=.cart-row:nth-child(3) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Гейминг мишка Razer Abyssus Essential')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/razer-abyssus-essential/')])[4]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "${second_item}"
+    }, {
+      "id": "82336858-a4c4-4f74-9446-8aba58c9d2cd",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a",
+      "targets": [
+        ["linkText=Механична клавиатура Redragon - Mitra K551, черна", "linkText"],
+        ["css=.cart-row:nth-child(4) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Механична клавиатура Redragon - Mitra K551, черна')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/mehanichna-geymarska-klaviatura-redragon-mitra-k551-s-cherven-switch/')])[4]", "xpath:href"],
+        ["xpath=//div[4]/div/div/a", "xpath:position"]
+      ],
+      "value": "${third_item}"
+    }]
+  }, {
+    "id": "d8e49250-fbca-48fb-95bf-2b537eb496a4",
+    "name": "8_add-to-cart-assert-price",
+    "commands": [{
+      "id": "07917aee-43c5-499a-8a49-d18307f06482",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f19c8c3-e412-47a7-913b-baad05d542f0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e1c7294-6b9b-4ef2-9b9b-1f78fa4b0ba9",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf3fe017-2f8a-4316-af30-96e472d00249",
+      "comment": "",
+      "command": "click",
+      "target": "css=.owl-item:nth-child(3) .first",
+      "targets": [
+        ["css=.owl-item:nth-child(3) .first", "css:finder"],
+        ["xpath=//img[@alt='Xbox One S + Star Wars Jedi: Fallen Order Bundle']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div[3]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3972a4c4-fdec-4afc-9cf1-0431f41e8f4b",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=.col-xs-5 > h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Xbox One S + Star Wars Jedi: Fallen Order Bundle')]", "xpath:innerText"]
+      ],
+      "value": "first_item"
+    }, {
+      "id": "0ccede25-ebd6-48d3-b04c-b9083dcb1963",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bb856ae-8df8-40da-b31d-512c7ec67797",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[16]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "76651c5b-2570-4a3a-ac98-5b756658738f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8b3ccc7-51e4-4a9b-9780-e7e835a05913",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='products-list']/div[2]/a/span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(2) .first", "css:finder"],
+        ["xpath=//img[@alt='Гейминг мишка Razer Abyssus Essential -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[2]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa5fdd4a-e2f0-45ea-ad41-d521333408f6",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Гейминг мишка Razer Abyssus Essential')]", "xpath:innerText"]
+      ],
+      "value": "second_item "
+    }, {
+      "id": "9ab6fd4d-8466-4686-ad34-fb7ed756f63a",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37408614-d14d-4362-b5b8-5f617a3e43aa",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[13]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9403c24-70b2-42a2-a7c8-7978a432abd3",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b826852a-cfca-4b5e-b195-b14b1a8ed596",
+      "comment": "",
+      "command": "click",
+      "target": "css=.owl-item:nth-child(1) .first",
+      "targets": [
+        ["css=.owl-item:nth-child(1) .first", "css:finder"],
+        ["xpath=//img[@alt='Механична клавиатура Redragon - Mitra K551, черна']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3437310-17be-4b28-aee9-d1ad29b36128",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Механична клавиатура Redragon - Mitra K551, черна')]", "xpath:innerText"]
+      ],
+      "value": "third_item"
+    }, {
+      "id": "070af60a-2642-4cea-a9fc-60bd0483f15a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(8)",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "31341846-d6b0-4a2a-a2a7-4a65c125ec0d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a",
+      "targets": [
+        ["css=.checkout-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Виж кошницата')])[2]", "xpath:link"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/checkout/cart/?___SID=U')])[3]", "xpath:href"],
+        ["xpath=//div[7]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a13375e2-fe55-4431-9c90-d2ed3789dba5",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a",
+      "targets": [
+        ["linkText=Xbox One S + Star Wars Jedi: Fallen Order Bundle", "linkText"],
+        ["css=.cart-row:nth-child(2) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xbox One S + Star Wars Jedi: Fallen Order Bundle')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/xbox-one-s-star-wars-jedi-fallen-order-bundle/')])[4]", "xpath:href"],
+        ["xpath=//form/div/div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": "${first_item}"
+    }, {
+      "id": "a19ae490-47bf-42cb-9ac9-e365817684a8",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a",
+      "targets": [
+        ["linkText=Гейминг мишка Razer Abyssus Essential", "linkText"],
+        ["css=.cart-row:nth-child(3) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Гейминг мишка Razer Abyssus Essential')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/razer-abyssus-essential/')])[4]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "${second_item}"
+    }, {
+      "id": "02761696-894b-404b-b987-65068825a77f",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a",
+      "targets": [
+        ["linkText=Механична клавиатура Redragon - Mitra K551, черна", "linkText"],
+        ["css=.cart-row:nth-child(4) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Механична клавиатура Redragon - Mitra K551, черна')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/mehanichna-geymarska-klaviatura-redragon-mitra-k551-s-cherven-switch/')])[4]", "xpath:href"],
+        ["xpath=//div[4]/div/div/a", "xpath:position"]
+      ],
+      "value": "${third_item}"
+    }, {
+      "id": "0ac57658-7adb-46fa-bdac-8712efc1d7ce",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var el; var sum; var total; var total_price;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e8a4573-3795-4dcf-b393-a3f94993b91a",
+      "comment": "",
+      "command": "runScript",
+      "target": "   function myFunction(element) {  \telement.innerHTML = element.innerHTML.replace(/&nbsp;/g,'');  \telement.innerText = element.innerText.replace(/[^\\x20-\\x7E]/gmi, \"\"); \telement.innerText = element.innerText.replace('.',''); \telement.innerText = element.innerText.replace(',','.');     };            el = document.querySelectorAll('.cart-row.item .cell.col4');      el.forEach (  element => myFunction(element) );                  sum = 0.0;      el.forEach (  element => sum += Number(element.innerText) );            total = document.querySelector('.total-row .price');      myFunction(total);         sum = sum.toFixed(2);      total_price = Number(total.innerText);        ",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d2c0740-9ac9-4447-8d39-73b31471c0f2",
+      "comment": "",
+      "command": "if",
+      "target": "sum == total_price",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "142b9364-e800-4ca3-a3d3-fe7ca08e0067",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"true\"",
+      "targets": [],
+      "value": "isEqual"
+    }, {
+      "id": "0fbd4234-f917-4364-80ff-f4f549c17f24",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4f12e6a-8cfb-4e12-afea-62db89ecfa7c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"false\"",
+      "targets": [],
+      "value": "isEqual"
+    }, {
+      "id": "7e773c05-b3d0-401c-906d-f2a0ef2337fd",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b6e1027-ca98-4440-948d-64601378e461",
+      "comment": "",
+      "command": "assert",
+      "target": "isEqual",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "7f8313fb-f32d-4225-a379-6d856fd29958",
+    "name": "9_add-to-cart-assert-price-with-quantity",
+    "commands": [{
+      "id": "3d17e13a-be4a-4700-aca2-c809147daef9",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56191b99-bc05-4b02-897d-e9cabffed963",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1040",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ca67728-2d4d-4724-ac4b-23397455d621",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0452b2d-96ae-4cae-8f26-8b942a7fcb3e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.owl-item:nth-child(3) .first",
+      "targets": [
+        ["css=.owl-item:nth-child(3) .first", "css:finder"],
+        ["xpath=//img[@alt='Xbox One S + Star Wars Jedi: Fallen Order Bundle']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div[3]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f1e5b61-70ce-47b8-8f48-ed1608a4e2ae",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=.col-xs-5 > h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Xbox One S + Star Wars Jedi: Fallen Order Bundle')]", "xpath:innerText"]
+      ],
+      "value": "first_item"
+    }, {
+      "id": "4aebce26-b6a3-4d0b-bb0e-038b088a8983",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41408c76-0f76-4353-b1de-cee7e3f4e4f6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[16]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "21c5e4f5-7a5f-4431-900c-9a1de211eba5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1d9cbdb-cb9c-421f-b1de-b5f3981bc531",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='products-list']/div[2]/a/span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(2) .first", "css:finder"],
+        ["xpath=//img[@alt='Гейминг мишка Razer Abyssus Essential -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[2]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "198aad3b-1fc8-4b8b-8c22-a2eef0beea59",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Гейминг мишка Razer Abyssus Essential')]", "xpath:innerText"]
+      ],
+      "value": "second_item "
+    }, {
+      "id": "c627e53c-640b-4f65-a9d4-69042352f95d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7199d0b1-00e0-44fa-9c8e-40f400083dcf",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a",
+      "targets": [
+        ["css=.close-popup", "css:finder"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[13]", "xpath:href"],
+        ["xpath=//div[6]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fd6b5ff-b60f-41aa-8dba-a6f21db21c61",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span",
+      "targets": [
+        ["css=.category3 span", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/nav/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//nav/ul/li[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11928d07-a78b-4f8c-ab39-5d83416b49c4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.owl-item:nth-child(1) .first",
+      "targets": [
+        ["css=.owl-item:nth-child(1) .first", "css:finder"],
+        ["xpath=//img[@alt='Механична клавиатура Redragon - Mitra K551, черна']", "xpath:img"],
+        ["xpath=//div[@id='productSlider_cplsddd8f06d334e83a5767192706eef26d2b']/div/div/div/a/span/img", "xpath:idRelative"],
+        ["xpath=//span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38e6f2b5-a977-42d1-9149-6c4731c2412f",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//form[@id='product_addtocart_form']/div/div[2]/h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Механична клавиатура Redragon - Mitra K551, черна')]", "xpath:innerText"]
+      ],
+      "value": "third_item"
+    }, {
+      "id": "ff823bcb-9b81-495d-8cba-60d809644428",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(8)",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc62ff4d-ccaa-40b1-9289-9e474c7c6f8e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a",
+      "targets": [
+        ["css=.checkout-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Виж кошницата')])[2]", "xpath:link"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/checkout/cart/?___SID=U')])[3]", "xpath:href"],
+        ["xpath=//div[7]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebbcf588-4469-4ce1-8b14-ac3c852f0628",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a",
+      "targets": [
+        ["linkText=Xbox One S + Star Wars Jedi: Fallen Order Bundle", "linkText"],
+        ["css=.cart-row:nth-child(2) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Xbox One S + Star Wars Jedi: Fallen Order Bundle')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[2]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/xbox-one-s-star-wars-jedi-fallen-order-bundle/')])[4]", "xpath:href"],
+        ["xpath=//form/div/div[2]/div/div/a", "xpath:position"]
+      ],
+      "value": "${first_item}"
+    }, {
+      "id": "9dc77f0f-df55-4539-b80d-c3562d86b0cc",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a",
+      "targets": [
+        ["linkText=Гейминг мишка Razer Abyssus Essential", "linkText"],
+        ["css=.cart-row:nth-child(3) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Гейминг мишка Razer Abyssus Essential')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/razer-abyssus-essential/')])[4]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"]
+      ],
+      "value": "${second_item}"
+    }, {
+      "id": "b92da962-8087-4239-8a1b-5a8dec72cbfe",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a",
+      "targets": [
+        ["linkText=Механична клавиатура Redragon - Mitra K551, черна", "linkText"],
+        ["css=.cart-row:nth-child(4) .item-title", "css:finder"],
+        ["xpath=(//a[contains(text(),'Механична клавиатура Redragon - Mitra K551, черна')])[2]", "xpath:link"],
+        ["xpath=//div[@id='shopping-cart-table']/div[4]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/product/mehanichna-geymarska-klaviatura-redragon-mitra-k551-s-cherven-switch/')])[4]", "xpath:href"],
+        ["xpath=//div[4]/div/div/a", "xpath:position"]
+      ],
+      "value": "${third_item}"
+    }, {
+      "id": "b686c18e-7b10-4967-9430-5f029d972d0f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var items_price; var quantites; var sum = 0.0; var total; var total_price;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10d6152e-15b5-4a04-a789-ef3fd7f3a128",
+      "comment": "",
+      "command": "runScript",
+      "target": "   function myFunction(element) {  \telement.innerHTML = element.innerHTML.replace(/&nbsp;/g,'');  \telement.innerText = element.innerText.replace(/[^\\x20-\\x7E]/gmi, \"\"); \telement.innerText = element.innerText.replace('.',''); \telement.innerText = element.innerText.replace(',','.');     };           temp = document.querySelectorAll('.shopping-cart-items .old-price');     if(temp != null){       temp.forEach( element => element.innerHTML = \"\");     }      items_price= document.querySelectorAll('.cart-row.item .cell.col2');     items_price.forEach (  element => myFunction(element) ); \t     quantities = document.getElementsByClassName('amount ui-spinner-input') ;            sum = 0.0;          for( var i=0; i<items_price.length; i++) { \tsum += Number(items_price[i].innerText) * Number(quantities[i].getAttribute('value'));          }                total = document.querySelector('.total-row .price');     myFunction(total);        sum = sum.toFixed(2);     total_price = Number(total.innerText);     total_price = total_price.toFixed(2);   ",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2af78009-e28e-4c00-ac4e-4ff49a141e19",
+      "comment": "",
+      "command": "if",
+      "target": "sum == total_price",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d5b8425-3012-454d-ab13-c29b6b45f81f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"true\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "bd3f49b6-64aa-4849-98c3-aa8522211f04",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45f58f7f-6c73-4799-b8bf-b046415692d1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"false\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "866f5e41-d6a0-462b-9553-e09a0c8ec408",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "577e42d9-ff67-4167-85e5-016261405a30",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "true"
+    }]
+  }, {
+    "id": "a0a77f85-ab04-44d7-b616-8fdc7c6dad87",
+    "name": "10_add-to-cart-with-button",
+    "commands": [{
+      "id": "52c6bce7-43bc-4da0-b346-bde26a0ec835",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.ozone.bg/homepage.php/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3c2cdbc-32b9-4b45-9706-77f4bbe7a5c1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e71131b3-1cc0-4ce8-82fc-e7a1abbc3ee6",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3",
+      "targets": [
+        ["css=.active h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/div/div/div/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Гейминг')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6b16a46-fd5b-47ba-a0d3-e58b74ba60f5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3",
+      "targets": [
+        ["css=li:nth-child(1) .hhb > h3", "css:finder"],
+        ["xpath=//div[@id='main']/div/div[2]/div/div/aside/div/div[2]/ul/li/a/span/h3", "xpath:idRelative"],
+        ["xpath=//div[2]/ul/li/a/span/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Игри за компютри и конзоли')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e781460e-4871-43de-974e-67d6ba99dfc5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[8]/a/span/img",
+      "targets": [
+        ["css=.col-xs-3:nth-child(8) .first", "css:finder"],
+        ["xpath=//img[@alt='Mortal Kombat XL (PS4) -1']", "xpath:img"],
+        ["xpath=//div[@id='products-list']/div[8]/a/span/img", "xpath:idRelative"],
+        ["xpath=//div[8]/a/span/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "754cf121-80d9-43a3-bcb0-9825605fe221",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[4]/a",
+      "targets": [
+        ["css=.button:nth-child(8)", "css:finder"],
+        ["xpath=//form[@id='product_addtocart_form']/div/div[3]/div[4]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:;')])[6]", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "994be38b-4baa-4852-a520-8b8f2b27cde8",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[5]/div/div[3]/a",
+      "targets": [
+        ["css=.checkout-button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Виж кошницата')])[2]", "xpath:link"],
+        ["xpath=//div[@id='stenik-ajaxaddtocart-result']/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://www.ozone.bg/checkout/cart/?___SID=U')])[3]", "xpath:href"],
+        ["xpath=//div[5]/div/div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "733dfab0-3774-4f81-8bf0-8b1555a7967c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 0",
+      "targets": [],
+      "value": "counter"
+    }, {
+      "id": "eb40268e-b54f-43c0-b882-89066de2462c",
+      "comment": "",
+      "command": "while",
+      "target": "${counter} < 3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fda67fe-ea23-4cb5-958c-f8f78ec5dc11",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span/a",
+      "targets": [
+        ["css=.ui-spinner-up", "css:finder"],
+        ["xpath=//div[@id='shopping-cart-table']/div[2]/div[3]/div/span/a", "xpath:idRelative"],
+        ["xpath=//span/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca5ffd15-7cd5-4a09-801d-620293b4a70c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${counter} + 1",
+      "targets": [],
+      "value": "counter"
+    }, {
+      "id": "4a9a06b4-7cbb-44c4-8a97-739a651ce115",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5615af4-f96e-419f-a27d-19620ed09327",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${counter} + 1",
+      "targets": [],
+      "value": "counter"
+    }, {
+      "id": "e15a566d-ac24-42f4-9c88-c069941944ee",
+      "comment": "",
+      "command": "executeScript",
+      "target": "var single_price; var expected_price;",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c900342f-d003-4680-a903-f2f6083f63ef",
+      "comment": "",
+      "command": "runScript",
+      "target": "   function myFunction(element) {  \telement.innerHTML = element.innerHTML.replace(/&nbsp;/g,'');  \telement.innerText = element.innerText.replace(/[^\\x20-\\x7E]/gmi, \"\"); \telement.innerText = element.innerText.replace('.',''); \telement.innerText = element.innerText.replace(',','.');     };           temp = document.querySelectorAll('.shopping-cart-items .old-price');     if(temp != null){       temp.forEach( element => element.innerHTML = \"\");     }      price_array = document.getElementsByClassName('regular-price');     myFunction(price_array[1]);     myFunction(price_array[2]);      single_price = Number(price_array[1].innerText);     single_price = single_price.toFixed(2);       expected_price = Number(price_array[2].innerText);     expected_price = expected_price.toFixed(2);       \t   ",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "618cebbf-bd14-4671-9ba3-fcd3e39a4876",
+      "comment": "",
+      "command": "if",
+      "target": "single_price * ${counter} == expected_price",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d5b4fc8-e0cd-41f4-a156-006864d15111",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"true\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "3e30d9c0-6a11-41df-ad5f-dfa44b2f8afb",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ac24f79-7468-45dd-84bc-1dfd9c1592cb",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"false\"",
+      "targets": [],
+      "value": "output"
+    }, {
+      "id": "630d1aa1-3a10-4b31-a444-06148c1b2897",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37252201-56c2-41ec-8d50-6093552c0d15",
+      "comment": "",
+      "command": "assert",
+      "target": "output",
+      "targets": [],
+      "value": "true"
+    }]
+  }],
+  "suites": [{
+    "id": "5d81c564-953b-41ee-b554-c9cf14172b01",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.ozone.bg/", "https://www.ozone.bg/homepage.php/"],
+  "plugins": []
+}

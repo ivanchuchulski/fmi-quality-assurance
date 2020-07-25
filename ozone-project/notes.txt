@@ -1,0 +1,21 @@
+
+TODO
+    -заглавие
+    -оправяне на съдържанието
+
+формален модел за тестването : 
+    функционален контролен списък 
+        1. user login
+            1.5.1. login-test
+        2. product filtering by category
+            2.5.1. search-category
+            2.5.2. search-bar-category
+            2.5.3. book-search-title
+            2.5.4. path-to-page-filter
+            2.5.5. active-filters-figures
+        3. cart
+            3.5.1. add-to-cart
+            3.5.2. add-to-cart-assert-price
+            3.5.3. add-to-cart-assert-price-with-quantity
+            3.5.4. add-to-cart-with-button
+        
